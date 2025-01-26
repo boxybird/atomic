@@ -1,0 +1,27 @@
+{
+  "name": "boxybird/atomic",
+  "description": "Atomic integrates HTMX fragments into WordPress, enabling dynamic partial page updates without full reloads.",
+  "license": "MIT",
+  "keywords": [
+    "WordPress",
+    "HTMX",
+    "plugin",
+    "fragments",
+    "router",
+    "PHP"
+  ],
+  "authors": [
+    {
+      "name": "Andrew Rhyand",
+      "email": "andrew.rhyand@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "BoxyBird\\Atomic\\": "src/"
+    }
+  }
+}
