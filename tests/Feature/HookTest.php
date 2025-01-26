@@ -1,6 +1,6 @@
 <?php
 
-test('example', function ($method, $endpoint) {
+test('add_action hooks', function ($method, $endpoint) {
     $response = $this->request($method, $endpoint);
 
     $code = $response['response']['code'];
