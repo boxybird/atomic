@@ -22,5 +22,7 @@ if (!file_exists(__DIR__.'/vendor/autoload.php')) {
 define('ATOMIC_URL', plugin_dir_url(__FILE__));
 
 require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/tests/test-hooks.php';
 
 BoxyBird\Atomic\Atomic::init();
+

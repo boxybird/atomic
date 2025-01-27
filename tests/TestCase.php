@@ -16,6 +16,11 @@ abstract class TestCase extends BaseTestCase
 
         require_once __DIR__.'/../../../../wp-load.php';
 
+        if (!defined('ATOMIC_TESTS_ENABLED') || ATOMIC_TESTS_ENABLED !== true) {
+            fwrite(STDOUT, "Atomic tests are not enabled. Please define ATOMIC_TESTS_ENABLED as true in your wp-config.php.\n");
+            exit(1);
+        }
+
         $this->request_args = [
             'headers' => [
                 'HX-Request' => true,
