@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Illuminate\Encryption\Encrypter;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -21,13 +22,15 @@ abstract class TestCase extends BaseTestCase
             exit(1);
         }
 
+        $data = (new Encrypter(ATOMIC_ENCRYPTION_KEY))->encrypt([
+            'nonce' => wp_create_nonce('atomic_nonce'),
+            'post_id' => 1,
+        ]);
+
         $this->request_args = [
             'headers' => [
                 'HX-Request' => true,
-                'Atomic-Data' => json_encode([
-                    'nonce' => wp_create_nonce('atomic_nonce'),
-                    'post_id' => 1,
-                ]),
+                'Atomic-Data' => json_encode(['data' => $data]),
             ],
             'sslverify' => false,
         ];

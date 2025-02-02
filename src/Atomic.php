@@ -4,17 +4,22 @@ declare(strict_types=1);
 
 namespace BoxyBird\Atomic;
 
+use Exception;
+use Illuminate\Encryption\Encrypter;
+
 final class Atomic
 {
+    private const MATCHED_RULE_PATTERN = 'atomic/v1/([a-zA-Z_-]+)?$';
+
+    private const NONCE_NAME = 'atomic_nonce';
+
     private static ?self $instance = null;
 
     private ?string $request = null;
 
     private array $atomicRequestData = [];
 
-    private const MATCHED_RULE_PATTERN = 'atomic/v1/([a-zA-Z_-]+)?$';
-
-    private const NONCE_NAME = 'atomic_nonce';
+    private ?Encrypter $encrypter = null;
 
     public static function init(): self
     {
@@ -27,11 +32,24 @@ final class Atomic
 
     public function __construct()
     {
+        $this->setEncrypter();
+
         add_action('init', [$this, 'registerApiEndpoint']);
         add_filter('redirect_canonical', [$this, 'redirectCanonical'], 10, 2);
         add_action('send_headers', [$this, 'sendHeaders']);
         add_action('template_redirect', [$this, 'templateRedirect']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue']);
+    }
+
+    private function setEncrypter(): void
+    {
+        if (!defined('ATOMIC_ENCRYPTION_KEY')) {
+            throw new Exception(
+                __CLASS__.' cannot find constant ATOMIC_ENCRYPTION_KEY. Must be set in wp-config.php as 16 character random string.'
+            );
+        }
+
+        $this->encrypter = new Encrypter(ATOMIC_ENCRYPTION_KEY);
     }
 
     public function registerApiEndpoint(): void
@@ -55,7 +73,12 @@ final class Atomic
             return;
         }
 
-        $this->atomicRequestData = json_decode(stripslashes_deep($_SERVER['HTTP_ATOMIC_DATA']), true);
+        try {
+            $data = json_decode(stripslashes_deep($_SERVER['HTTP_ATOMIC_DATA']), true)['data'] ?? null;
+            $this->atomicRequestData = $this->encrypter->decrypt($data);
+        } catch (Exception) {
+            //
+        }
 
         $this->validNonce();
     }
@@ -74,9 +97,13 @@ final class Atomic
         wp_enqueue_script('atomic-script', ATOMIC_URL.'js/atomic.js', [], null, true);
         wp_enqueue_script('atomic-htmx-script', ATOMIC_URL.'js/htmx.js', ['atomic-script'], '2.0.4', true);
 
-        wp_localize_script('atomic-script', 'atomicData', [
+        $data = $this->encrypter->encrypt([
             'nonce' => wp_create_nonce(self::NONCE_NAME),
             'post_id' => get_the_ID(),
+        ]);
+
+        wp_localize_script('atomic-script', 'atomicData', [
+            'data' => $data,
         ]);
     }
 
@@ -112,7 +139,6 @@ final class Atomic
         $post_id = (int) $this->atomicRequestData['post_id'];
 
         do_action($hook_name, $post_id);
-
         exit;
     }
 }

@@ -10,6 +10,11 @@ git clone https://github.com/boxybird/atomic atomic-htmx
 cd atomic-htmx
 composer install
 ```
+> Location: /wp-config.php
+
+```php
+define('ATOMIC_ENCRYPTION_KEY', 'SOME_RANDOM_16_CHARACTER_STRING');
+```
 
 > Location: /wp-admin/plugins.php
 
