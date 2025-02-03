@@ -123,6 +123,7 @@ final class Atomic
     private function validNonce(): void
     {
         if (wp_verify_nonce($this->atomicRequestData['nonce'] ?? -1, self::NONCE_NAME)) {
+            header('HTTP/1.1 200 OK');
             return;
         }
 
