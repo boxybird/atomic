@@ -81,6 +81,8 @@ final class Atomic
         }
 
         $this->validNonce();
+
+        do_action('atomic/headers');
     }
 
     public function templateRedirect(): void
