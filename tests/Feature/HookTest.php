@@ -17,4 +17,9 @@ test('add_action hooks', function ($method, $endpoint) {
     ['method' => 'put', 'endpoint' => '/atomic/v1/test-hook'],
     ['method' => 'patch', 'endpoint' => '/atomic/v1/test-hook'],
     ['method' => 'delete', 'endpoint' => '/atomic/v1/test-hook'],
+    ['method' => 'get', 'endpoint' => '/atomic/v1/test-builder-hook'],
+    ['method' => 'post', 'endpoint' => '/atomic/v1/test-builder-hook'],
+    ['method' => 'put', 'endpoint' => '/atomic/v1/test-builder-hook'],
+    ['method' => 'patch', 'endpoint' => '/atomic/v1/test-builder-hook'],
+    ['method' => 'delete', 'endpoint' => '/atomic/v1/test-builder-hook'],
 ]);
