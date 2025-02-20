@@ -45,7 +45,7 @@ Visit and refresh permalinks by clicking **"Save Changes"** button
 
 ```PHP
 add_action('atomic/get/my-hook', function (int $post_id) {
-    echo "<p>HTMX GET request fragmnt - ID: {$post_id}</p>";
+    echo "<p>HTMX GET request fragment - ID: {$post_id}</p>";
 });
 ```
 
