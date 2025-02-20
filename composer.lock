@@ -168,16 +168,16 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v11.41.3",
+            "version": "v11.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "80c85f81573cc4c024da05312119f9149a6b64c1"
+                "reference": "8a650cf80dce7f37f20b8bf33e11922b291bf0e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/80c85f81573cc4c024da05312119f9149a6b64c1",
-                "reference": "80c85f81573cc4c024da05312119f9149a6b64c1",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/8a650cf80dce7f37f20b8bf33e11922b291bf0e2",
+                "reference": "8a650cf80dce7f37f20b8bf33e11922b291bf0e2",
                 "shasum": ""
             },
             "require": {
@@ -220,11 +220,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-01-24T15:40:32+00:00"
+            "time": "2025-02-19T15:59:05+00:00"
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v11.41.3",
+            "version": "v11.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -270,16 +270,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v11.41.3",
+            "version": "v11.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "534b697fc1dd9fbdd9fbf2f33fc9dcbb943dea75"
+                "reference": "b350a3cd8450846325cb49e1cbc1293598b18898"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/534b697fc1dd9fbdd9fbf2f33fc9dcbb943dea75",
-                "reference": "534b697fc1dd9fbdd9fbf2f33fc9dcbb943dea75",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/b350a3cd8450846325cb49e1cbc1293598b18898",
+                "reference": "b350a3cd8450846325cb49e1cbc1293598b18898",
                 "shasum": ""
             },
             "require": {
@@ -314,11 +314,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-01-10T20:57:00+00:00"
+            "time": "2025-02-10T14:20:57+00:00"
         },
         {
             "name": "illuminate/encryption",
-            "version": "v11.41.3",
+            "version": "v11.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/encryption.git",
@@ -369,7 +369,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v11.41.3",
+            "version": "v11.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -415,16 +415,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v11.41.3",
+            "version": "v11.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "5dc4a31f34d8a0529cf1fd6b7fe167f6cae91e0c"
+                "reference": "6d0b9aff352d0e228623ec3aa7a1ce66b7981e11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/5dc4a31f34d8a0529cf1fd6b7fe167f6cae91e0c",
-                "reference": "5dc4a31f34d8a0529cf1fd6b7fe167f6cae91e0c",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/6d0b9aff352d0e228623ec3aa7a1ce66b7981e11",
+                "reference": "6d0b9aff352d0e228623ec3aa7a1ce66b7981e11",
                 "shasum": ""
             },
             "require": {
@@ -488,20 +488,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-01-30T09:11:36+00:00"
+            "time": "2025-02-19T20:54:36+00:00"
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.8.4",
+            "version": "3.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58"
+                "reference": "b1a53a27898639579a67de42e8ced5d5386aa9a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
-                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/b1a53a27898639579a67de42e8ced5d5386aa9a4",
+                "reference": "b1a53a27898639579a67de42e8ced5d5386aa9a4",
                 "shasum": ""
             },
             "require": {
@@ -577,8 +577,8 @@
             ],
             "support": {
                 "docs": "https://carbon.nesbot.com/docs",
-                "issues": "https://github.com/briannesbitt/Carbon/issues",
-                "source": "https://github.com/briannesbitt/Carbon"
+                "issues": "https://github.com/CarbonPHP/carbon/issues",
+                "source": "https://github.com/CarbonPHP/carbon"
             },
             "funding": [
                 {
@@ -594,7 +594,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-27T09:25:35+00:00"
+            "time": "2025-02-11T16:28:45+00:00"
         },
         {
             "name": "psr/clock",
@@ -1625,16 +1625,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.12.1",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "123267b2c49fbf30d78a7b2d333f6be754b94845"
+                "reference": "024473a478be9df5fdaca2c793f2232fe788e414"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/123267b2c49fbf30d78a7b2d333f6be754b94845",
-                "reference": "123267b2c49fbf30d78a7b2d333f6be754b94845",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/024473a478be9df5fdaca2c793f2232fe788e414",
+                "reference": "024473a478be9df5fdaca2c793f2232fe788e414",
                 "shasum": ""
             },
             "require": {
@@ -1673,7 +1673,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.12.1"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.0"
             },
             "funding": [
                 {
@@ -1681,7 +1681,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-08T17:47:46+00:00"
+            "time": "2025-02-12T12:17:51+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2545,16 +2545,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "c00d78fb6b29658347f9d37ebe104bffadf36299"
+                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/c00d78fb6b29658347f9d37ebe104bffadf36299",
-                "reference": "c00d78fb6b29658347f9d37ebe104bffadf36299",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
+                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
                 "shasum": ""
             },
             "require": {
@@ -2586,9 +2586,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.0.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.1.0"
             },
-            "time": "2024-10-13T11:29:49+00:00"
+            "time": "2025-02-19T13:28:12+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
