@@ -15,17 +15,21 @@ final class Atomic
 
     private static ?self $instance = null;
 
+    private ?string $base_url = null;
+
     private ?string $request = null;
 
     private array $atomicRequestData = [];
 
     private ?Encrypter $encrypter = null;
 
-    public static function init(): self
+    public static function init(string $base_url): self
     {
         if (self::$instance === null) {
-            self::$instance = new self();
+            self::$instance = new self;
         }
+
+        self::$instance->base_url = rtrim($base_url, '/');
 
         return self::$instance;
     }
@@ -96,8 +100,8 @@ final class Atomic
 
     public function enqueue(): void
     {
-        wp_enqueue_script('atomic-script', ATOMIC_URL.'js/atomic.js', [], null, true);
-        wp_enqueue_script('atomic-htmx-script', ATOMIC_URL.'js/htmx.js', ['atomic-script'], '2.0.4', true);
+        wp_enqueue_script('atomic-script', $this->base_url.'/vendor/boxybird/atomic/js/atomic.js', [], null, true);
+        wp_enqueue_script('atomic-htmx-script', $this->base_url.'/vendor/boxybird/atomic/js/htmx.js', ['atomic-script'], '2.0.4', true);
 
         $data = $this->encrypter->encrypt([
             'nonce' => wp_create_nonce(self::NONCE_NAME),
